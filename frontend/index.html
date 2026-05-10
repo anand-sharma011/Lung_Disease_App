@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Disease Detection | AI-Powered Diagnosis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">🫁</div>
+                <h1>Lung Disease Detection</h1>
+            </div>
+            <p class="tagline">AI-Powered Chest X-Ray Analysis</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">📤</div>
+                        <h3>Upload Chest X-Ray Image</h3>
+                        <p>Drag & drop or click to select</p>
+                        <p class="file-info">Supports: JPG, PNG, JPEG (Max 10MB)</p>
+                        <input type="file" id="fileInput" accept="image/*" hidden>
+                        <button class="btn btn-primary" id="uploadBtn">Choose File</button>
+                    </div>
+
+                    <!-- Image Preview -->
+                    <div class="image-preview" id="imagePreview" style="display: none;">
+                        <img id="previewImg" alt="X-ray preview">
+                        <button class="btn btn-secondary" id="removeBtn">Remove</button>
+                    </div>
+                </div>
+
+                <!-- Analyze Button -->
+                <button class="btn btn-analyze" id="analyzeBtn" disabled>
+                    <span class="btn-text">Analyze X-Ray</span>
+                    <span class="loading-spinner" style="display: none;"></span>
+                </button>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <h2>Analysis Results</h2>
+
+                    <!-- Main Prediction -->
+                    <div class="main-result">
+                        <div class="result-icon" id="resultIcon">🏥</div>
+                        <div class="result-text">
+                            <p class="result-label">Prediction</p>
+                            <h3 class="result-disease" id="diseaseName">-</h3>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="confidenceFill" style="width: 0%"></div>
+                                <span class="confidence-text" id="confidenceText">0%</span>
+                            </div>
+                            <p class="confidence-subtext">Confidence Score</p>
+                        </div>
+                    </div>
+
+                    <!-- All Probabilities -->
+                    <div class="probabilities">
+                        <h3>All Disease Probabilities</h3>
+                        <div id="probabilitiesList"></div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="recommendations" id="recommendations">
+                        <h3>📋 Recommendations</h3>
+                        <p id="recommendationText"></p>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <button class="btn btn-reset" id="resetBtn">Analyze Another Image</button>
+                </div>
+            </div>
+
+            <!-- Error Section -->
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-card">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Analysis Failed</h3>
+                    <p id="errorMessage"></p>
+                    <button class="btn btn-primary" id="errorResetBtn">Try Again</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>⚠️ <strong>Disclaimer:</strong> This is an AI-assisted diagnostic tool. Always consult with a qualified
+                healthcare professional for medical decisions.</p>
+            <p>Powered by Deep Learning | FastAPI | Lung Disease Detection Model</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
