@@ -1,3 +1,13 @@
+---
+title: Lung Disease Detection
+emoji: 🫁
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Lung Disease Detection System
 
 AI-powered system for detecting lung diseases from chest X-ray images using Deep Learning.
